@@ -46,7 +46,7 @@ func _physics_process(delta):
 					else:
 						$AnimatedSprite.play("fall")
 		time_cooldown += delta
-		if Input.is_action_just_pressed("ui_focus_next") and is_attaking == false and time_cooldown > 0.6:
+		if Input.is_action_just_pressed("ui_focus_next") and is_attaking == false and time_cooldown > 0.6 and G.MP_Char > 0:
 			if is_on_floor():
 				velocity.x = 0
 			is_attaking = true
@@ -56,11 +56,13 @@ func _physics_process(delta):
 				var enemy = $Ray_raiht.get_collider()
 				if enemy.has_method('dead'):
 					enemy.damage()
+					G.MP_Char -= 10 # Вычитание стамины при атаке
 					print (1)
 			if $Ray_left.is_colliding() :
 				var enemy2 = $Ray_left.get_collider()
 				if enemy2.has_method('dead'):
 					enemy2.damage()
+					G.MP_Char -= 10 # Вычитание стамины при атаке
 					print(2)
 			time_cooldown = 0
 			
@@ -70,6 +72,8 @@ func _physics_process(delta):
 	if is_on_floor():
 		if onground == false:
 			is_attaking = false
+			if G.MP_Char < 100: # прибовление стамины после атаки
+				G.MP_Char += 10
 		onground = true
 	else:
 		if is_attaking == false:	

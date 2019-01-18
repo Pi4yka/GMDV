@@ -11,12 +11,12 @@ var is_attaking = false
 var time_cooldown_enemy = 0
 var time_dead_enemy = 0
 
-func dead():
+func dead(): # Убивает врага
 	$AnimatedSprite.play("dead")
 	velocity = Vector2(0, 0)
 	is_dead = true
-	if is_dead == true:
-		$AnimatedSprite.play("corpse")
+	$run.disabled = true
+	$Timer_dead.start()
 	
 	
 func damage():
@@ -77,3 +77,7 @@ func _physics_process(delta):
 func _on_AnimatedSprite_animation_finished(): # даёт возможность проиграть анимацию атаки
 	is_attaking = false
 	
+
+
+func _on_Timer_dead_timeout():
+	queue_free()
