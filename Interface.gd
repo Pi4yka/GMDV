@@ -11,3 +11,4 @@ func _ready():
 
 func _process(delta):
 	$HP.text = 'HP:' +str(G.HP_Char)
+	$MP.text = 'MP:' +str(G.MP_Char)
