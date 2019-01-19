@@ -5,5 +5,6 @@ func _ready():
 	
 func _on_Coin_body_entered(body):
 	if "Char" in body.name:
+		G.coin_amount += 1
 		queue_free()
 		print ("coin")

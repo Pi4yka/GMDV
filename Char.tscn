@@ -27,11 +27,6 @@ animations = [ {
 "name": "Run",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 4 ) ],
-"loop": true,
-"name": "jump",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 3 ) ],
 "loop": true,
 "name": "fall",
@@ -41,6 +36,11 @@ animations = [ {
 "loop": true,
 "name": "swing",
 "speed": 9.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "jump",
+"speed": 5.0
 } ]
 _sections_unfolded = [ "Resource" ]
 
@@ -54,7 +54,7 @@ extents = Vector2( 11.097, 7.47246 )
 custom_solver_bias = 0.0
 extents = Vector2( 5.11568, 7.4926 )
 
-[node name="Char" type="KinematicBody2D" index="0"]
+[node name="Char" type="KinematicBody2D"]
 
 position = Vector2( 181.042, 103.927 )
 input_pickable = false
@@ -106,7 +106,7 @@ shape = SubResource( 3 )
 
 [node name="Camera2D" type="Camera2D" parent="." index="5"]
 
-position = Vector2( 1.20833, 0.138878 )
+position = Vector2( -5.37776, -7.04594 )
 anchor_mode = 1
 rotating = false
 current = true
@@ -146,10 +146,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 28.0
-margin_top = 20.0
-margin_right = 82.0
-margin_bottom = 34.0
+margin_left = 29.0
+margin_top = 19.0
+margin_right = 83.0
+margin_bottom = 33.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -167,10 +167,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 108.0
-margin_top = 18.0
-margin_right = 162.0
-margin_bottom = 32.0
+margin_left = 112.0
+margin_top = 19.0
+margin_right = 166.0
+margin_bottom = 33.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -178,6 +178,48 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 text = "MP"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Potion" type="Label" parent="Interface" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 31.0
+margin_top = 158.0
+margin_right = 72.0
+margin_bottom = 172.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "Potion"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Coin" type="Label" parent="Interface" index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 107.0
+margin_top = 158.0
+margin_right = 147.0
+margin_bottom = 172.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "Gold:"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1

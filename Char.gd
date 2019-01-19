@@ -66,13 +66,31 @@ func _physics_process(delta):
 					print(2)
 			time_cooldown = 0
 			
+	if Input.is_action_just_pressed("ui_accept"): #использование зелья лечения
+		if G.potion_amount == 0:
+			print ("nothing potion")
+		elif G.HP_Char == 100:
+			print ("your hp is FULL!")
+		else:
+			if G.potion_amount >= 1:
+				G.potion_amount -= 1 
+				G.HP_Char += 15
+				print ("potion used!")
+			
+	if Input.is_action_just_pressed("ui_select"):
+		if G.NPC_chat == true:
+			print ("HI I AM ALIVE")
+						
+			
+			
+				
 		
 	
 	velocity.y += Gravity
 	if is_on_floor():
 		if onground == false:
 			is_attaking = false
-			if G.MP_Char < 100: # прибовление стамины после атаки
+			if G.MP_Char < 100: # прибавление стамины после атаки
 				G.MP_Char += 10
 		onground = true
 	else:
@@ -90,3 +108,4 @@ func _physics_process(delta):
 
 func _on_AnimatedSprite_animation_finished():
 	is_attaking = false
+	
