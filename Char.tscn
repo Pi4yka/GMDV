@@ -88,11 +88,11 @@ cast_to = Vector2( 9, 0 )
 collision_mask = 1
 _sections_unfolded = [ "Transform" ]
 
-[node name="Ray_left" type="RayCast2D" parent="." index="3"]
+[node name="block" type="RayCast2D" parent="." index="3"]
 
 position = Vector2( -3, 0 )
 scale = Vector2( 1, 0.7 )
-enabled = true
+enabled = false
 exclude_parent = true
 cast_to = Vector2( -9, 0 )
 collision_mask = 1
@@ -168,9 +168,9 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 108.0
-margin_top = 18.0
+margin_top = 21.0
 margin_right = 162.0
-margin_bottom = 32.0
+margin_bottom = 35.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
